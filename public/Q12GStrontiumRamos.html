@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> Q1 2nd Graded Exercise RAMOS, Jann Albee M. 9-Strontium</h2>
+
+    <label for="Mprice">Meal Price:</label>
+    <input id="Mp" type="number"> <br>
+    <label for="Tip">Tip:</label>
+    <input id="Tip" type="number" > <br>
+    <label for="SChange">Service Change(%):</label>
+    <input id="Sc" type="number" > <br>
+    <br>
+    <button onclick="totalMeal()">Accept Input</button>
+
+    <p id="Replace">Total Meal: </p> 
+
+    
+
+    <script>
+
+        function totalMeal() {
+
+            var MealPrice = parseFloat(document.getElementById("Mp").value)
+            var Tip = parseFloat(document.getElementById("Tip").value)
+            var ServiceC = parseFloat(document.getElementById("Sc").value)
+            var totalValue = MealPrice + Tip + (MealPrice * (ServiceC / 100))
+
+            document.getElementById("Replace").innerHTML = "Total Meal: Php" + totalValue.toFixed(2)
+
+            if (isNaN(MealPrice) || isNaN(Tip) || isNaN(ServiceC))
+        {
+            document.getElementById("Replace").innerHTML = "Invalid, Please put all the values necessary."
+        }
+        }
+
+    </script>
+
+</body>
+</html>
+
