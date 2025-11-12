@@ -1,0 +1,18 @@
+<div id="box" style="width:100px; height:100px; background:red;"></div>
+<script>
+  const box = document.getElementById("box");
+  box.onmouseover = changeColorScale;
+
+  function changeColorScale() {
+    box.style.backgroundColor = "royalblue";
+    box.style.transform = "scale(1.2)";
+  }
+
+  box.onmouseout = resetBox;
+  
+  function resetBox() {
+    box.style.backgroundColor = "red";
+    box.style.transform = "scale(1)";
+  } 
+
+</script>
