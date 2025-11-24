@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Find Second Largest Number</title>
+  <title>Add Two Numbers</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1142,10 +1142,10 @@ details[open] summary {
       <div class="problem-panel">
         <!-- Problem Header -->
         <div class="problem-header">
-          <h1 class="problem-title">🎯 Find Second Largest Number</h1>
+          <h1 class="problem-title">🎯 Add Two Numbers</h1>
           <div class="problem-meta">
-            <span class="badge badge-medium" id="difficulty-badge">⭐⭐ Medium</span>
-            <span class="badge badge-time">⏱️ 15-20 minutes</span>
+            <span class="badge badge-easy" id="difficulty-badge">⭐ Easy</span>
+            <span class="badge badge-time">⏱️ 10-15 minutes</span>
           </div>
         </div>
 
@@ -1155,85 +1155,24 @@ details[open] summary {
             📝 Problem Description
           </div>
           <div class="card-content" id="problem-description">
-            <h1>Find Second Largest Number</h1>
-<h2>Problem Description</h2>
-<p>Write a program that finds the second largest number in an array. If there is no second largest number (for example, all numbers are the same), print &quot;NONE&quot;.</p>
+            <h2>Problem Description</h2>
+<p>Write a program that reads two lines of input. Each line contains a single number. Your program should print the sum of these two numbers.</p>
 <h2>Input Format</h2>
 <ul>
-<li>First line: An integer <code>N</code> (the number of elements in the array, 1 ≤ N ≤ 100)</li>
-<li>Next N lines: Each contains one integer from the array (-1000 ≤ value ≤ 1000)</li>
+<li>First line: An integer <code>N</code></li>
+<li>Second line: An integer <code>M</code></li>
 </ul>
 <h2>Output Format</h2>
-<p>Print either:</p>
-<ul>
-<li>The second largest number, OR</li>
-<li>&quot;NONE&quot; if there is no second largest number</li>
-</ul>
-<h2>Constraints</h2>
-<ul>
-<li>1 ≤ N ≤ 100</li>
-<li>-1000 ≤ array elements ≤ 1000</li>
-<li>If all numbers are the same, print &quot;NONE&quot;</li>
-<li>If there&#39;s only one unique number, print &quot;NONE&quot;</li>
-</ul>
-<h2>Examples</h2>
-<h3>Example 1</h3>
+<p>Print a single integer: the sum of N and M</p>
+<h2>Example</h2>
 <p><strong>Input:</strong></p>
 <pre><code>5
 10
-20
-30
-40
-50
 </code></pre>
 <p><strong>Output:</strong></p>
-<pre><code>40
+<pre><code>15
 </code></pre>
-<p><strong>Explanation:</strong> The largest is 50, the second largest is 40.</p>
-<h3>Example 2</h3>
-<p><strong>Input:</strong></p>
-<pre><code>4
-5
-5
-5
-5
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>NONE
-</code></pre>
-<p><strong>Explanation:</strong> All numbers are the same, so there&#39;s no second largest.</p>
-<h3>Example 3</h3>
-<p><strong>Input:</strong></p>
-<pre><code>6
-10
-20
-20
-30
-30
-30
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>20
-</code></pre>
-<p><strong>Explanation:</strong> The largest unique value is 30, the second largest unique value is 20.</p>
-<h2>Hints</h2>
-<details>
-<summary>💡 Hint 1: Track the top two</summary>
-Keep track of the largest and second largest numbers as you go through the array.
-</details>
-
-<details>
-<summary>💡 Hint 2: Handle duplicates</summary>
-If you find a number equal to the largest, don't update the second largest. You're looking for the second largest *unique* value.
-</details>
-
-<details>
-<summary>💡 Hint 3: Edge cases</summary>
-What if the array has only 1 number? What if all numbers are identical? Make sure to handle these cases!
-</details>
-
-
-
+<p><strong>Explanation:</strong> The sum of 5 and 10 is 15.</p>
           </div>
         </div>
 
@@ -1350,128 +1289,7 @@ What if the array has only 1 number? What if all numbers are identical? Make sur
     // ============================================
     // Test Cases (Filled by Generator)
     // ============================================
-    const testCases = [
-  {
-    "input": "5\n10\n20\n30\n40\n50",
-    "expectedOutput": "40"
-  },
-  {
-    "input": "4\n5\n5\n5\n5",
-    "expectedOutput": "NONE"
-  },
-  {
-    "input": "6\n10\n20\n20\n30\n30\n30",
-    "expectedOutput": "20"
-  },
-  {
-    "input": "3\n1\n2\n3",
-    "expectedOutput": "2"
-  },
-  {
-    "input": "2\n100\n50",
-    "expectedOutput": "50"
-  },
-  {
-    "input": "1\n42",
-    "expectedOutput": "NONE"
-  },
-  {
-    "input": "2\n10\n10",
-    "expectedOutput": "NONE"
-  },
-  {
-    "input": "10\n5\n5\n5\n5\n5\n5\n5\n5\n5\n5",
-    "expectedOutput": "NONE"
-  },
-  {
-    "input": "5\n1\n1\n1\n1\n2",
-    "expectedOutput": "1"
-  },
-  {
-    "input": "5\n2\n1\n1\n1\n1",
-    "expectedOutput": "1"
-  },
-  {
-    "input": "3\n-10\n-5\n-1",
-    "expectedOutput": "-5"
-  },
-  {
-    "input": "4\n-100\n-100\n-50\n-50",
-    "expectedOutput": "-100"
-  },
-  {
-    "input": "6\n0\n0\n0\n1\n1\n2",
-    "expectedOutput": "1"
-  },
-  {
-    "input": "5\n1000\n-1000\n999\n-999\n0",
-    "expectedOutput": "999"
-  },
-  {
-    "input": "10\n100\n99\n98\n97\n96\n95\n94\n93\n92\n91",
-    "expectedOutput": "99"
-  },
-  {
-    "input": "10\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9",
-    "expectedOutput": "8"
-  },
-  {
-    "input": "20\n949\n939\n910\n282\n137\n38\n-67\n-69\n-113\n-196\n-243\n-367\n-461\n-582\n-583\n-614\n-635\n-712\n-752\n-836",
-    "expectedOutput": "939"
-  },
-  {
-    "input": "8\n1\n2\n2\n2\n3\n3\n3\n3",
-    "expectedOutput": "2"
-  },
-  {
-    "input": "21\n367\n-301\n430\n488\n52\n446\n-133\n-22\n-451\n179\n15\n-281\n116\n-273\n439\n-205\n-3\n209\n301\n-283\n-164",
-    "expectedOutput": "446"
-  },
-  {
-    "input": "7\n192\n130\n-134\n-327\n67\n229\n176",
-    "expectedOutput": "192"
-  },
-  {
-    "input": "25\n-33\n456\n236\n213\n252\n337\n-280\n205\n-421\n434\n117\n256\n-376\n170\n-109\n-28\n411\n-154\n393\n191\n-379\n0\n-416\n-365\n-273",
-    "expectedOutput": "434"
-  },
-  {
-    "input": "3\n392\n-298\n249",
-    "expectedOutput": "249"
-  },
-  {
-    "input": "21\n-143\n94\n309\n-389\n474\n-498\n-181\n36\n286\n84\n-158\n-201\n-333\n370\n-144\n-331\n269\n410\n-349\n-398\n175",
-    "expectedOutput": "410"
-  },
-  {
-    "input": "25\n422\n-10\n-483\n68\n464\n39\n340\n-13\n-442\n476\n325\n-235\n323\n-435\n-308\n329\n494\n5\n-128\n-53\n-39\n258\n169\n-211\n206",
-    "expectedOutput": "476"
-  },
-  {
-    "input": "10\n134\n95\n284\n495\n244\n173\n-65\n-6\n281\n-184",
-    "expectedOutput": "284"
-  },
-  {
-    "input": "7\n232\n335\n-414\n401\n177\n-106\n245",
-    "expectedOutput": "335"
-  },
-  {
-    "input": "11\n-266\n-30\n-40\n60\n-441\n-397\n-267\n14\n9\n479\n-195",
-    "expectedOutput": "60"
-  },
-  {
-    "input": "15\n313\n341\n114\n-247\n-79\n-7\n230\n-220\n153\n55\n205\n-424\n57\n-74\n13",
-    "expectedOutput": "313"
-  },
-  {
-    "input": "29\n471\n-283\n443\n465\n-177\n5\n-302\n-93\n-74\n131\n331\n-327\n144\n-302\n214\n-69\n72\n-265\n-313\n186\n-26\n-74\n341\n-108\n231\n-216\n-113\n-274\n325",
-    "expectedOutput": "465"
-  },
-  {
-    "input": "18\n352\n182\n93\n134\n-194\n216\n-24\n423\n-69\n269\n179\n-334\n-129\n-274\n38\n-35\n-473\n-101",
-    "expectedOutput": "352"
-  }
-];
+    const testCases = [{"input": "5\n10", "expectedOutput": "15"}, {"input": "0\n-3", "expectedOutput": "-3"}, {"input": "100\n200", "expectedOutput": "300"}, {"input": "-50\n50", "expectedOutput": "0"}, {"input": "999\n1", "expectedOutput": "1000"}];
     
     // ============================================
     // Starter Code Templates
@@ -2229,43 +2047,5 @@ print(42)</code></pre>`
     }
 
   </script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
