@@ -2,9 +2,10 @@
     <html>
     <header>
         <h1>Please insert the required code:</h1>
+        <link rel="stylesheet" href="Dungeon.css">
     </header>
     <body>
-       <button type="button" onclick="One()">1</button> &nbsp; <button type="button" onclick="Two()">2</button> &nbsp; <button type="button" onclick="Three()">3</button>
+       <button id="butt1" type="button" onclick="One()">Flip</button> &nbsp; <button id="butt2" type="button" onclick="Two()">Flip</button> &nbsp; <button id="butt3" type="button" onclick="Three()">Flip</button>
        <button type="button" onclick="Enter()">Enter</button>
        &nbsp;&nbsp; <button type="button" onclick="Getout()">Go Back?</button>
        <br>
@@ -21,24 +22,56 @@
         let Istrue3 = false
         function One()
         {
+            
+            const btn1 = document.getElementById("butt1")
+
+            if (btn1.innerText === "Flip")
+        {
+            btn1.innerText = "Flipped"
             Istrue1 = true
+        }
+        else {
+            btn1.innerText = "Flip"
+            Istrue1 = false
+        }
         }
         function Two()
         {
-            total = total + 2
+            const btn2 = document.getElementById("butt2")
+
+            if (btn2.innerText === "Flip")
+        {
+            btn2.innerText = "Flipped"
+            Istrue2 = true
+        }
+        else {
+            btn2.innerText = "Flip"
+            Istrue2 = false
+        }
         }
         function Three()
         {
-            total = total + 3
+            const btn3 = document.getElementById("butt3")
+
+            if (btn3.innerText === "Flip")
+        {
+            btn3.innerText = "Flipped"
+            Istrue3 = true
+        }
+        else {
+            btn3.innerText = "Flip"
+            Istrue3 = false
+        }
         }
         function Enter(){
-            if (total == 6)
+            if (Istrue1 == true && Istrue2 == false && Istrue3 == true)
         {
-            alert("CORRECT!!")
+            alert("PassCode Unlocked, Code for next is 0 1 0 0 1 1 1 0 2")
         }
-        else if (total < 6 || total > 6)
+        else
         {
-            alert("Nope, reload to try again!")
+            alert("Nope, not enough! Reload to page to try again.")
+            
         }
         }
 
