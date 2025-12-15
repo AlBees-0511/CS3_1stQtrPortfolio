@@ -2,19 +2,27 @@
     <html>
         <head>
             <link rel="stylesheet" href="costume.css">
+            <div class="panel">
+            <div class="title">ADVENTURE GONE WRONG</div>
+            <div class="play-btn" onclick="startGame()">PLAY?</div>
+            </div>
+                
+            </div>
         </head>
-    <header>
-        <h1>Adventure Gone Wrong</h1>
-        <h1><li><a href="playarea1.html">Play?</a></li></h1>
-    </header>
-    <body>
-        <h2>Check us out!</h2>
-        <h3><li><a href="AboutME.html">About Us!</a></li></h3>
-        <h3><li><a href="AboutIT.html">About the Game!</a></li></h3>
-        <h3><li><a href="HowJS.html">How the game works!</a></li></h3>
-    </body>
+    <div class="contents">
+        <h3 class="head3">Contents</h3>
+    <li><a href="AboutIT.html" class="AboutG">About the Game</a></li> <li><a href="HowJS.html" class="AboutJ">JS implementation</a></li>
+    <li><a href="AboutME.html" class="AboutU">About Ourselves</a></li>
+</div>
+
     <footer>
 
     </footer>
     </html>
 
+<script>
+    function startGame()
+    {
+        window.location.href = "playarea1.html"
+    }
+</script>

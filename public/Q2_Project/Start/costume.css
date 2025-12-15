@@ -16,3 +16,64 @@ button {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.panel {
+  background: rgba(20,30,20, 0.9);
+  border-radius: 25px;
+  padding: 40px;
+  width: 70%;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+body {
+        margin: 0;
+        font-family: "Cinzel", serif;
+        background: url("https://img.freepik.com/premium-photo/sunlight-streaming-through-trees-forest_1048944-5726163.jpg?semt=ais_hybrid&w=740&q=80")
+            center/cover no-repeat fixed;
+        color: white;
+}
+
+.play-btn {
+        background: #111;
+        padding: 20px 40px;
+        border-radius: 30px;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+        display: inline-block;
+        text-decoration: underline;
+    }
+
+.contents {
+        background: rgba(20, 30, 20, 0.9);
+        border-radius: 25px;
+        padding: 30px;
+        width: 85%;
+        max-width: 1100px;
+        margin: 20px auto;
+        font-size: 28px;
+        line-height: 1.6;
+        text-align: center;
+    }
+.head3 {
+  margin: 0;
+}
+
+.AboutG {
+  text-decoration: none;
+}
+.AboutU{
+  text-decoration: none;
+}
+.AboutJ{
+  text-decoration: none;
+}

@@ -1,12 +1,29 @@
 <!DOCTYPE html>
     <html>
     <header>
-        <h1>What the- You arent supposed to be here yet! It's still in construction!!!</h1>
+        <h1>You are met with 2 pathways, one leading to an abandoned house and the other to car.</h1>
+        <h2>Which will you choose?</h2>
     </header>
     <body>
-       <h3><li><a href="Stg3.html">Next (Cause it aint done yet ;3)</a></li></h3>
+       <button type="button" onclick="stage3()">Haunted House</button> &nbsp; <button type="button" onclick="stage4()">Car</button>
+       &nbsp; <button type="button" onclick="Back()">Go Back</button>
     </body>
     <footer>
 
     </footer>
     </html>
+
+    <script>
+        function stage3()
+        {
+            window.location.href = "Stg3.html"
+        }
+        function stage4()
+        {
+            window.location.href = "Stg4.html"
+        }
+        function Back()
+        {
+            window.location.href = "Stg1.html"
+        }
+    </script>

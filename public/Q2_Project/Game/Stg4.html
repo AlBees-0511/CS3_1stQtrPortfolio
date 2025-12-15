@@ -1,12 +1,28 @@
 <!DOCTYPE html>
     <html>
     <header>
-        <h1>What the- You arent supposed to be here yet! It's still in construction!!!</h1>
+        <h1>You found a broken down Car, you investigate further which led you to finding the code!</h1>
     </header>
     <body>
-       <h3><li><a href="Stg5.html">Next (Cause it aint done yet ;3)</a></li></h3>
+       <button type="button" onclick="HOUSE()">Go back to house?</button> &nbsp; <button type="button" onclick="Cower()">Go back to pathway?</button>
+       &nbsp; <button type="button" onclick="Show()">Look at the code</button>
     </body>
     <footer>
 
     </footer>
     </html>
+
+    <script>
+        function HOUSE()
+        {
+            window.location.href = "Stg3.html"
+        }
+        function Cower()
+        {
+            window.location.href = "Stg2.html"
+        }
+        function Show()
+        {
+            alert("THE CODE IS THE SUM OF ANY NUMBER WHICH WILL EQUAL TO 6 Ex: 1+2+3 = 6")
+        }
+    </script>

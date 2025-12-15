@@ -1,12 +1,53 @@
 <!DOCTYPE html>
     <html>
     <header>
-        <h1>What the- You arent supposed to be here yet! It's still in construction!!!</h1>
+        <h1>Please insert the required code:</h1>
     </header>
     <body>
-       <h3>Hi</h3>
+       <button type="button" onclick="One()">1</button> &nbsp; <button type="button" onclick="Two()">2</button> &nbsp; <button type="button" onclick="Three()">3</button>
+       <button type="button" onclick="Enter()">Enter</button>
+       &nbsp;&nbsp; <button type="button" onclick="Getout()">Go Back?</button>
+       <br>
+       <button type="button" onclick="GoHome()">Go back to Main Menu?</button>
     </body>
     <footer>
 
     </footer>
     </html>
+
+    <script>
+        let Istrue1 = false
+        let Istrue2 = false
+        let Istrue3 = false
+        function One()
+        {
+            Istrue1 = true
+        }
+        function Two()
+        {
+            total = total + 2
+        }
+        function Three()
+        {
+            total = total + 3
+        }
+        function Enter(){
+            if (total == 6)
+        {
+            alert("CORRECT!!")
+        }
+        else if (total < 6 || total > 6)
+        {
+            alert("Nope, reload to try again!")
+        }
+        }
+
+        function Getout()
+        {
+            window.location.href = "Stg4.html"
+        }
+        function GoHome()
+        {
+            window.location.href = "../Start/mainPROJECT.html"
+        }
+    </script>
