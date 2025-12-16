@@ -1,15 +1,36 @@
 <!DOCTYPE html>
     <html>
     <header>
-        <h1>Please insert the required code:</h1>
+        <h1>Flip a lever:</h1>
         <link rel="stylesheet" href="Dungeon.css">
     </header>
     <body>
-       <button id="butt1" type="button" onclick="One()">Flip</button> &nbsp; <button id="butt2" type="button" onclick="Two()">Flip</button> &nbsp; <button id="butt3" type="button" onclick="Three()">Flip</button>
-       <button type="button" onclick="Enter()">Enter</button>
-       &nbsp;&nbsp; <button type="button" onclick="Getout()">Go Back?</button>
+        <div class="container">
+
+  <div class="lever-box">
+    <img id="lever1" src="lever_closed.jpg" width="100">
+    <br>
+    <button class="wow" onclick="toggleLever('lever1', 1)">Toggle</button>
+  </div>
+  <div class="lever-box">
+    <img id="lever2" src="lever_closed.jpg" width="100">
+    <br>
+    <button class="wow" onclick="toggleLever('lever2', 2)">Toggle</button>
+  </div>
+  <div class="lever-box">
+    <img id="lever3" src="lever_closed.jpg" width="100">
+    <br>
+    <button class="wow" onclick="toggleLever('lever3', 3)">Toggle</button>
+  </div>
+  <div class="lever-box">
+    <img id="lever4" src="lever_closed.jpg" width="100">
+    <br>
+    <button class="wow" onclick="toggleLever('lever4', 4)">Toggle</button>
+  </div>
+        <button class="hay" type="button" onclick="check()">Submit</button>
+       <button class="hay" type="button" onclick="Getout()">Go Back?</button>
        <br>
-       <button type="button" onclick="GoHome()">Go back to Main Menu?</button>
+       <button class="hay" type="button" onclick="GoHome()">Go back to Main Menu?</button>
     </body>
     <footer>
 
@@ -17,67 +38,30 @@
     </html>
 
     <script>
-        let Istrue1 = false
-        let Istrue2 = false
-        let Istrue3 = false
-        function One()
-        {
-            
-            const btn1 = document.getElementById("butt1")
+        function toggleLever(leverId, leverNumber) {
+            const lever = document.getElementById(leverId);
 
-            if (btn1.innerText === "Flip")
-        {
-            btn1.innerText = "Flipped"
-            Istrue1 = true
+            if (lever.src.includes("lever_closed.jpg")) {
+                lever.src = "lever_open.jpg";
+                window["lev" + leverNumber] = true;
+            } else {
+                lever.src = "lever_closed.jpg";
+                window["lev" + leverNumber] = false;
+            }
         }
-        else {
-            btn1.innerText = "Flip"
-            Istrue1 = false
-        }
-        }
-        function Two()
-        {
-            const btn2 = document.getElementById("butt2")
-
-            if (btn2.innerText === "Flip")
-        {
-            btn2.innerText = "Flipped"
-            Istrue2 = true
-        }
-        else {
-            btn2.innerText = "Flip"
-            Istrue2 = false
-        }
-        }
-        function Three()
-        {
-            const btn3 = document.getElementById("butt3")
-
-            if (btn3.innerText === "Flip")
-        {
-            btn3.innerText = "Flipped"
-            Istrue3 = true
-        }
-        else {
-            btn3.innerText = "Flip"
-            Istrue3 = false
-        }
-        }
-        function Enter(){
-            if (Istrue1 == true && Istrue2 == false && Istrue3 == true)
-        {
-            alert("PassCode Unlocked, Code for next is 0 1 0 0 1 1 1 0 2")
-        }
-        else
-        {
-            alert("Nope, not enough! Reload to page to try again.")
-            
-        }
-        }
-
+    function check() {
+            if (
+                lev1 === true &&
+                lev3 === true &&
+                lev2 === false &&
+                lev4 === false
+            ) {
+                alert("A wall suddenly opens, revealing a doorway... (TBC)");
+            }
+}
         function Getout()
         {
-            window.location.href = "Stg4.html"
+            window.location.href = "Stg3.html"
         }
         function GoHome()
         {

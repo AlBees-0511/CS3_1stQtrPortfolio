@@ -1,83 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Adventure Gone Wrong</title>
+  <meta charset="UTF-8">
+  <title>Centered Button-Controlled Levers</title>
 
-<style>
+  <style>
     body {
-        margin: 0;
-        font-family: "Cinzel", serif;
-        background: url("https://img.freepik.com/premium-photo/sunlight-streaming-through-trees-forest_1048944-5726163.jpg?semt=ais_hybrid&w=740&q=80")
-            center/cover no-repeat fixed;
-        color: white;
-    }
-    .panel {
-        background: rgba(20, 30, 20, 0.9);
-        border-radius: 25px;
-        padding: 40px;
-        width: 70%;
-        max-width: 900px;
-        margin: 40px auto;
-        text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    .title {
-        font-size: 45px;
-        font-weight: 700;
-        margin-bottom: 40px;
+    .container {
+      display: flex;
+      gap: 40px;
     }
 
-    .play-btn {
-        background: #111;
-        padding: 20px 40px;
-        border-radius: 30px;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.2s;
-        display: inline-block;
-        text-decoration: underline;
+    .lever-box {
+      text-align: center;
     }
+  </style>
 
-    .play-btn:hover {
-        transform: scale(1.05);
-        background: #222;
-    }
-
-    .contents {
-        background: rgba(20, 30, 20, 0.9);
-        border-radius: 25px;
-        padding: 30px;
-        width: 85%;
-        max-width: 1100px;
-        margin: 20px auto;
-        font-size: 28px;
-        line-height: 1.6;
-        text-align: center;
-    }
-</style>
 </head>
-
 <body>
 
-<!-- Main Title Panel -->
-<div class="panel">
-    <div class="title">ADVENTURE GONE WRONG</div>
-    <div class="play-btn" onclick="startGame()">PLAY?</div>
-</div>
+<div class="container">
 
-<!-- Contents Section -->
-<div class="contents">
-    <strong>Contents just for the slides</strong><br>
-    About Us – Page 2 &nbsp;&nbsp;&nbsp; Actual Gameplay – Page 4 to 10<br>
-    About Game – Page 3 &nbsp;&nbsp;&nbsp; How JS Would Work – Page 11
+  <!-- Lever 1 -->
+  <div class="lever-box">
+    <img id="lever1" src="lever_closed.jpg" width="100">
+    <br>
+    <button onclick="toggleLever('lever1')">Toggle</button>
+  </div>
+
+  <!-- Lever 2 -->
+  <div class="lever-box">
+    <img id="lever2" src="lever_closed.jpg" width="100">
+    <br>
+    <button onclick="toggleLever('lever2')">Toggle</button>
+  </div>
+
+  <!-- Lever 3 -->
+  <div class="lever-box">
+    <img id="lever3" src="lever_closed.jpg" width="100">
+    <br>
+    <button onclick="toggleLever('lever3')">Toggle</button>
+  </div>
+
 </div>
 
 <script>
-    function startGame() {
-        alert("Game Starting… (You can change this action later!)");
-    }
+function toggleLever(leverId) {
+  const lever = document.getElementById(leverId);
+
+  if (lever.src.includes("lever_closed.jpg")) {
+    lever.src = "lever_open.jpg";
+  } else {
+    lever.src = "lever_closed.jpg";
+  }
+}
 </script>
 
 </body>

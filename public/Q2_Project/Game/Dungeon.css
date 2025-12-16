@@ -3,3 +3,48 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+}
+
+.lever-box {
+      text-align: center;
+}
+
+h1 {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif
+}
+.hay {
+    background-color: #856b55;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    border-style: double;
+    border-color: #604d3e;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family:Arial, Helvetica, sans-serif
+}
+.hay:hover{
+    transform: scale(1.1);
+}
+
+.wow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+}

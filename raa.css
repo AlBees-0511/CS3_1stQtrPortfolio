@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: white;
+}
+
+.lever-container {
+  display: flex;
+  gap: 40px;
+}
+
+/* Lever base */
+.lever {
+  position: relative;
+  width: 70px;
+  height: 180px;
+  background: #585a6a;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Lever handle */
+.lever::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  width: 28px;
+  height: 90px;
+  background: #c8cbd9;
+  border-radius: 15px;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease;
+}
+
+/* Lever knob */
+.lever::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 105px;
+  width: 45px;
+  height: 45px;
+  background: #ffb300;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+/* Flipped state */
+.lever.active::before {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.lever.active::after {
+  transform: translateX(-50%) translateY(70px);
+}
