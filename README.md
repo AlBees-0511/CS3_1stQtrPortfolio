@@ -1,3 +1,16 @@
+# Q3 Proposal Update
+
+## Adventure at the Haunted Woods; Gone WRONG!!
+
+## Features:
+- PC and Mobile Compatible
+- Puzzles and Lore
+- Speedrun Mode!
+
+## Details:
+- If you want to be on the leaderboard, you will be asked to input your name and section!
+- After that, we will use your name and your time to be put in speedrun mode!
+
 # CS3_1stQtrPortfolio_Aline Teresa Mendoza
 
 ![Portfolio](https://wiztoonz.com/wp-content/uploads/2022/04/Blog-Post-Portfolio.jpg)
