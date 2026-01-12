@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottom Fade Message</title>
+    <style>
+        /* Notification styling */
+        #bottomMessage {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Fade-in */
+        #bottomMessage.showing {
+            opacity: 1;
+        }
+
+        /* Fade-out */
+        #bottomMessage.hiding {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="bottomMessage">Player: What is it that's hiding to have such puzzles..??</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const message = document.getElementById("bottomMessage");
+
+            // Fade in
+            message.classList.add("showing");
+
+            // Fade out after 2.5 seconds
+            setTimeout(() => {
+                message.classList.remove("showing");
+                message.classList.add("hiding");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

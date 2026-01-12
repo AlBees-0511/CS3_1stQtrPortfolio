@@ -1,10 +1,10 @@
 <!DOCTYPE html>
     <html>
     <header>
-
+        <link rel="stylesheet" href="Dungeon2.css">
     </header>
     <body>
-
+        <p id="bottomMessage">Player: What is it that's hiding to have such puzzles..??</p>
     </body>
     <footer>
 
@@ -20,4 +20,16 @@
         {
             window.location.href = "Stg5.html"
         }
+        document.addEventListener("DOMContentLoaded", function () {
+            const message = document.getElementById("bottomMessage");
+
+            // Fade in
+            message.classList.add("showing");
+
+            // Fade out after 2.5 seconds
+            setTimeout(() => {
+                message.classList.remove("showing");
+                message.classList.add("hiding");
+            }, 2500);
+        });
     </script>

@@ -1,0 +1,27 @@
+#bottomMessage {
+    position: fixed;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 20px 36px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    font-family: Arial, sans-serif;
+}
+
+/* Fade-in */
+#bottomMessage.showing {
+    opacity: 1;
+}
+
+/* Fade-out */
+#bottomMessage.hiding {
+    opacity: 0;
+}
+
+html {
+    background-image: url(https://tse2.mm.bing.net/th/id/OIP.Ijwssg80tbd7k1CrbRjAiAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3);
+}
