@@ -1,0 +1,33 @@
+form {
+    max-width: 400px;
+    max-height: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #0c1a5a;
+    border-radius: 1px;
+    background-color: #4780fa;
+    }
+
+label {
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #ff0000;
+    color: #000000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 36px;
+}
+
+body {
+    background-image: url("https://wallpapers.com/images/file/bfdi-background-1920-x-1080-1yjndv92qfpcy4k5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: color;
+}
