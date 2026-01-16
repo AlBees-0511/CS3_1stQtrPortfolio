@@ -6,19 +6,55 @@
 </head>
 <body>
     <form method="post" action="submit">
-        <label for="sID">Student ID</label><br>
+    <fieldset>
+        <legend> Details About You </legend>
+        <label for="sID">Contestant ID</label><br>
         <input type="number" id="fname" name="fname" required="true"><br>
         
         <label for="FullN">Full Name:</label><br>
-        <input type="text" id="lname" name="lname" required="true"><br>
+        <input type="text" id="lname" name="lname" required="true" minlength="2"><br>
 
         <label for="bday">Birthday:</label><br>
         <input type="date" id="bday" name="bday" required="true"><br>
 
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required="true"><br><br>
-        
-        <input type="submit" value="Next Page">
+    </fieldset>
+    
+    <fieldset>
+        <legend> More Details </legend>
+
+        <label for="MobNum">Mobile Number:</label><br>
+        <input type="tel" id="MobNum" name="MobNum" required="true"><br>
+
+        <label for="Grade">Grade Level:</label><br>
+
+        <select id="Grade" name="Grade" required="true">
+            <option>Grade Level</option>
+            <option value="7">Grade 7</option>
+            <option value="8">Grade 8</option>
+            <option value="9">Grade 9</option>
+            <option value="10">Grade 10</option>
+            <option value="11">Grade 11</option>
+            <option value="12">Grade 12</option>
+        </select><br>
+
+        <label for="Team">Preferred Team:</label><br>
+        <select id="club" name="Clubs" required="true">
+            <option>Example Club</option>
+            <option value="SCA">SCA</option>
+            <option value="Sap">Sapienara</option>
+            <option value="Chess">Animo Chess Club</option>
+            <option value="Space">AstroSoc</option>
+            <option value="Bake">Bake Club</option>
+            <option value="XYZ">XYZ</option>
+            <option value="Sing">Himig Agham</option>
+        </select><br>
+
+        <label for="Why">Why did you pick this Team?</label><br>
+        <input type="text" id="Why" name="Why" required="true" minlength="10" maxlength="200"><br>
+    </fieldset>
+        <input type="submit" value="submit" onclick="alert('Submitted the Form!')"> <input type="reset" value="reset" onclick="alert('Successfully Reseted the Form!')">
     </form>
 </body>
 </html>
