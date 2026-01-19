@@ -13,24 +13,34 @@ h1 {
     border-radius: 15px;
     display: inline-block;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 300px;
     font-size: 40px;
+}
+h2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif, cursive;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-size: 30px;
 }
 button{
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif, cursive;
-    font-size: 30px;
+    font-size: 20px;
     border-radius: 12px;
     padding: 10px 24px;
     cursor: pointer;
+    display: inline-block;
 }
-
 button:hover {
     background-color: white;
     color: black;
 }
-#next {
-    float: right;
-    margin-top: 18px;
+.buttons{
+    margin: auto;
 }
