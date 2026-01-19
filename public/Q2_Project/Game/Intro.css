@@ -13,13 +13,14 @@ h1 {
     border-radius: 15px;
     display: inline-block;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 50%;
+    margin-bottom: 30%;
+    font-size: 40px;
 }
 button{
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif, cursive;
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 12px;
     padding: 10px 24px;
     cursor: pointer;
@@ -27,4 +28,13 @@ button{
 button:hover {
     background-color: white;
     color: black;
+}
+header {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20%;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
 }
