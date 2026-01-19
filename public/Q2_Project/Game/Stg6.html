@@ -5,6 +5,13 @@
     </header>
     <body>
         <p id="bottomMessage">Player: What is it that's hiding to have such puzzles..??</p>
+
+        <h3>.. -. .--. ..- - / -.. --- - ... / .- -. -.. / -.. .- ... .... . ... --..-- / - --- / . -. - . .-. / - .... .. ... / .-. --- --- -- .-.-.- / - .... . / -.-. .. .--. .... . .-. / -.-- --- ..- / .-- .. .-.. .-.. / -. . . -.. --..-- / .. ... / -... .- .-. / --. ..- . .-. .-. / --. ..- . .-. .-. / ..-. .-. .. .-. .- </h3>
+    <div class="container">
+        <button class="pluh" onclick="Dot()">DOT</button> &nbsp; 
+        <button class="plu" onclick="Dash()">DASH</button><br><br>
+        <button class="fah" onclick="test()">Submit</button>
+    </div>
     </body>
     <footer>
 
@@ -32,4 +39,27 @@
                 message.classList.add("hiding");
             }, 2500);
         });
+
+        function Dot()
+        {
+            var Dot = 0
+            Dot += 1;
+        }
+        function Dash()
+        {
+            var Dash = 0
+            Dash += 1;
+        }
+        function test()
+        {
+            if (Dot == 17 && Dash == 7)
+            {
+                alert("Congratulations, you have deciphered the code.");
+                how();
+            }
+            else
+            {
+                alert("Nothing happens, maybe try again?")
+            }
+        }
     </script>
