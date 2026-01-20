@@ -6,7 +6,8 @@
     <body>
         <p id="bottomMessage">Player: What is it that's hiding to have such puzzles..??</p>
 
-        <h3>.. -. .--. ..- - / -.. --- - ... / .- -. -.. / -.. .- ... .... . ... --..-- / - --- / . -. - . .-. / - .... .. ... / .-. --- --- -- .-.-.- / - .... . / -.-. .. .--. .... . .-. / -.-- --- ..- / .-- .. .-.. .-.. / -. . . -.. --..-- / .. ... / -... .- .-. / --. ..- . .-. .-. / --. ..- . .-. .-. / ..-. .-. .. .-. .- </h3>
+        <h3>-... --.. .-.. ... .-.. --.. --.. / -- ...- -.-- / .-- -... .- .- .--. ..- -. / .- --- .--. --.. / .--. ..- / .- --- .-.. / .--- .--. .-- --- .-.. -.-- --..-- / ..-. ...- -... / .--- .... ..- / --.- -... --.. .- / .-- -... .- / .- --- .-.. / .--- ...- -.- .-.. / ..- ...- -.-- - .... ... ... ..-. / .... --.. ---... / --.. -.-- .... ..- .--</h3>
+
     <div class="container">
         <button class="pluh" onclick="Dot()">DOT</button> &nbsp; 
         <button class="plu" onclick="Dash()">DASH</button><br><br>
@@ -19,6 +20,8 @@
     </html>
 
     <script>
+        var final = '';
+
         function how()
         {
             window.location.href = "Stg7.html"
@@ -42,24 +45,27 @@
 
         function Dot()
         {
-            var Dot = 0
-            Dot += 1;
+            var Dot = '.'
+            final = final + Dot
         }
         function Dash()
         {
-            var Dash = 0
-            Dash += 1;
+            var Dash = '-'
+            final = final + Dash
         }
         function test()
         {
-            if (Dot == 17 && Dash == 7)
+            if (final === "--..-.--......-.--")
             {
-                alert("Congratulations, you have deciphered the code.");
-                how();
+            alert("One Last Chance to turn around.");
+            alert(final)
+            final = '';
+            how();
             }
-            else
+            else if (final !== "--..-.--......-.--")
             {
-                alert("Nothing happens, maybe try again?")
+            alert("Nothing happens, maybe try again?")
+            final = '';
             }
         }
     </script>
