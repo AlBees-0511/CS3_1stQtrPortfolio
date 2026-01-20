@@ -1,125 +1,131 @@
 /* ambient background & vignette */
 html, body {
-    min-height: 100vh;
-    margin: 0;
+  min-height: 100vh;
+  margin: 0;
 }
 
 body {
-    background: radial-gradient(ellipse at center, #111 0%, #060405 50%, #000 100%);
-    background-image: url("https://media.istockphoto.com/id/2101989203/photo/old-brick-wall.jpg?s=612x612&w=0&k=20&c=xWRbJMZD9Uc5nd6arHy9QtUpf3MYudPIT7s9jd2fpaE=");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    color: #e8ddd0;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 0.6px;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: radial-gradient(ellipse at center, #111 0%, #060405 50%, #000 100%);
+  background-image: url("https://media.istockphoto.com/id/2101989203/photo/old-brick-wall.jpg?s=612x612&w=0&k=20&c=xWRbJMZD9Uc5nd6arHy9QtUpf3MYudPIT7s9jd2fpaE=");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e8ddd0;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.6px;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack items vertically */
 }
 
 /* subtle film grain */
 body::after {
-    content: "";
-    pointer-events: none;
-    position: fixed;
-    inset: 0;
-    background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.02) 50%);
-    mix-blend-mode: overlay;
-    opacity: 0.6;
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.02) 50%);
+  mix-blend-mode: overlay;
+  opacity: 0.6;
 }
 
 /* vignette */
 body::before {
-    content:"";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.7) 100%);
-    pointer-events:none;
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.7) 100%);
+  pointer-events:none;
 }
 
 /* container layout */
 .container {
-    display: flex;
-    gap: 40px;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for mobile */
+  gap: 20px; /* Adjust gap for mobile */
+  position: relative;
+  z-index: 1;
+  justify-content: center; /* Center items */
 }
 
 .lever-box {
-    text-align: center;
+  text-align: center;
+  flex: 1 1 100px; /* Allow boxes to grow and shrink */
 }
 
 /* title */
 h1 {
-    color: #ffbaba;
-    text-shadow: 0 0 12px rgba(200,30,30,0.6), 0 2px 0 #000;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: flicker 4s infinite;
+  color: #ffbaba;
+  text-shadow: 0 0 12px rgba(200,30,30,0.6), 0 2px 0 #000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: flicker 4s infinite;
 
-    /* dotted background look */
-    background: rgba(0,0,0,0.63);
-    border: 1px dashed rgba(255,80,80,0.45);
-    display: inline-block;
-    padding: .4rem .9rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  /* dotted background look */
+  background: rgba(0,0,0,0.63);
+  border: 1px dashed rgba(255,80,80,0.45);
+  display: inline-block;
+  padding: .4rem .9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 /* flicker effect */
 @keyframes flicker {
-    0%, 19%, 21%, 23%, 100% { text-shadow: 0 0 18px rgba(255,80,80,0.7); opacity:1; }
-    20% { text-shadow: none; opacity:.7; }
-    22% { text-shadow: 0 0 6px rgba(255,30,30,0.4); opacity:.85; }
+  0%, 19%, 21%, 23%, 100% { text-shadow: 0 0 18px rgba(255,80,80,0.7); opacity:1; }
+  20% { text-shadow: none; opacity:.7; }
+  22% { text-shadow: 0 0 6px rgba(255,30,30,0.4); opacity:.85; }
 }
 
 /* main button */
 .hay {
-    color: #ffd3d3;
-    background: rgba(0, 0, 0, 0.63);
-    border: 1px dashed rgba(255,80,80,0.45);
-    padding: .6rem 1.2rem;
-    border-radius: 30px;
-    cursor: crosshair;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 1px;
-    transition: transform .12s ease, box-shadow .12s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  color: #ffd3d3;
+  background: rgba(0, 0, 0, 0.63);
+  border: 1px dashed rgba(255,80,80,0.45);
+  padding: .6rem 1.2rem;
+  border-radius: 30px;
+  cursor: crosshair;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1px;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .hay:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(150,10,10,0.5);
-    border-color: rgba(255,120,120,0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(150,10,10,0.5);
+  border-color: rgba(255,120,120,0.8);
 }
 
 /* transparent icon/button */
 .wow {
-    background: transparent;
-    border: none;
-    cursor: crosshair;
-    outline: none;
-    color: #ffd9d9;
-    text-shadow: 0 0 8px rgba(200,30,30,0.5);
-    transition: transform .15s ease;
+  background: transparent;
+  border: none;
+  cursor: crosshair;
+  outline: none;
+  color: #ffd9d9;
+  text-shadow: 0 0 8px rgba(200,30,30,0.5);
+  transition: transform .15s ease;
 
-    /* dotted background look */
-    background: rgba(0,0,0,0.63);
-    border: 1px dashed rgba(255,80,80,0.45);
-    display: inline-block;
-    padding: .4rem .9rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  /* dotted background look */
+  background: rgba(0,0,0,0.63);
+  border: 1px dashed rgba(255,80,80,0.45);
+  display: inline-block;
+  padding: .4rem .9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .wow:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 img {
   width: 150px;   /* or any size you want */
   height: auto;   /* keeps proportions */
 }
+
 .popup {
   position: fixed;
   inset: 0;
@@ -149,13 +155,14 @@ img {
   from { opacity: 0; transform: scale(.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
 .note-box {
   background: #2b1e12;
   background-image: url('note.webp');
   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
   padding: 1.8rem 1.5rem;
   max-width: 420px;
   color: #251a00;
@@ -173,4 +180,11 @@ img {
 .note-box p {
   position: relative;
   right: -15px;   /* move left — increase number for more shift */
+}
+
+/* Timer styling */
+.timer {
+  font-size: 1.5em; /* Adjust size for visibility */
+  margin-top: 10px; /* Space between lever and timer */
+  color: #ffd9d9; /* Timer text color */
 }

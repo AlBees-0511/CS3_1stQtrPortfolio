@@ -1,5 +1,9 @@
 <!DOCTYPE html>
     <html>
+      <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
     <header>
         <h1>Flip a lever:</h1>
         <link rel="stylesheet" href="Dungeon.css">
@@ -43,6 +47,7 @@
     <button class="hay" onclick="closeNote()">Take Note</button>
   </div>
 </div>
+  <div id="timer" style="font-size:2em; font-family:monospace;">00:00.000</div>
     </body>
     <footer>
 
@@ -68,8 +73,7 @@
                 lev2 === false &&
                 lev4 === false
             ) {
-                alert("A waLl suddenLy oPens, reveAling a doorway in THe wallS.");
-                alert("a note drops from above the wall, it reads 'The Captains of the Alpha, Bets its life for you.'")
+                alert("A wall suddenly opens, revealing a passageway ahead.");
                 window.location.href = "Stg6.html";
             }
 }
@@ -82,3 +86,4 @@
             window.location.href = "../Start/mainPROJECT.html"
         }
     </script>
+    <script src="time.js"></script>

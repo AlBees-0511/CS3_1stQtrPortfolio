@@ -153,4 +153,7 @@ footer {
     font-size: .85rem;
 }
 
-       
+.thing {
+    font: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

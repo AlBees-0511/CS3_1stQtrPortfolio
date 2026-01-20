@@ -1,0 +1,81 @@
+        body {
+            padding: 20px;
+        }
+
+        .leaderboard-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column; /* Change to column for mobile */
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.628);
+            border: 1px dashed rgba(255,80,80,0.45);
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+            background-color: black;
+            color: red;
+        }
+
+        button {
+            padding: 8px 20px;
+            cursor: pointer;
+            background-color: black;
+            color: red;
+            border: 1px dashed rgba(255,80,80,0.45);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            color: white;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: rgba(230, 230, 230, 0.6);
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .input-section {
+                flex-direction: column; /* Stack inputs vertically */
+            }
+
+            button {
+                width: 100%; /* Full width buttons */
+            }
+
+            th, td {
+                padding: 10px; /* Adjust padding for smaller screens */
+            }
+        }

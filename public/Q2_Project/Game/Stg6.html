@@ -12,11 +12,13 @@
         <button class="pluh" onclick="Dot()">DOT</button> &nbsp; 
         <button class="plu" onclick="Dash()">DASH</button><br><br>
         <button class="fah" onclick="test()">Submit</button>
+        <button class="fa" onclick="why()">Go Back</button>
     </div>
     <div id="resultPopup" class="dialogue hidden">
   <p id="resultText"></p>
   <button onclick="closeResult()">Continue</button>
 </div>
+<div id="timer" style="font-size:2em; font-family:monospace;">00:00.000</div>
     </body>
     <footer>
 
@@ -28,7 +30,7 @@
 
         function how()
         {
-            window.location.href = "Stg7.html"
+            window.location.href = "RecLead.html"
         }
         function why()
         {
@@ -53,14 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         function test()
         {
-            if (Dot == 17 && Dash == 7)
+            if (final == "..-..-....-..-")
             {
                 alert("Congratulations, you have deciphered the code.");
                 how();
             }
-            else
+            else if (final != "..-..-....-..-")
             {
                 alert("Nothing happens, maybe try again?")
             }
         }
     </script>
+    <script src="time.js"></script>
