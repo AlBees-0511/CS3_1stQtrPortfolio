@@ -1,69 +1,156 @@
-h1 {
-  text-align: center;
-  text-decoration: underline;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.panel {
-  background: rgba(20,30,20, 0.9);
-  border-radius: 25px;
-  padding: 40px;
-  width: 70%;
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-}
-
-.title {
-  font-size: 45px;
-  font-weight: 700;
-  margin-bottom: 40px;
-}
-
+/* ambient background & vignette */
 body {
-        margin: 0;
-        font-family: "Cinzel", serif;
-        background: url("https://img.freepik.com/premium-photo/sunlight-streaming-through-trees-forest_1048944-5726163.jpg?semt=ais_hybrid&w=740&q=80")
-            center/cover no-repeat fixed;
-        color: white;
+    background: radial-gradient(ellipse at center, #111 0%, #060405 50%, #000 100%);
+    color: #e8ddd0;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.6px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+  background-image: url("https://i.redd.it/forest-at-night-v0-dzhv8eo02zrc1.jpg?width=3888&format=pjpg&auto=webp&s=cf41b4469d397140198253519635ed42cbda2161");
+  background-size: cover;        /* Fill the screen */
+  background-repeat: no-repeat;  /* No tiling */
+  background-position: center;   /* Center the image */
 }
 
-.play-btn {
-        background: #111;
-        padding: 20px 40px;
-        border-radius: 30px;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.2s;
-        display: inline-block;
-        text-decoration: underline;
-    }
+/* subtle film grain */
+body::after{
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.02) 50%);
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+}
 
-.contents {
-        background: rgba(20, 30, 20, 0.9);
-        border-radius: 25px;
-        padding: 30px;
-        width: 85%;
-        max-width: 1100px;
-        margin: 20px auto;
-        font-size: 28px;
-        line-height: 1.6;
-        text-align: center;
-    }
-.head3 {
+/* vignette */
+body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.7) 100%);
+    pointer-events:none;
+}
+
+/* header styling */
+header{
+    border: 2px dashed rgba(180,20,20,0.6);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, rgba(30,0,0,0.15), rgba(0,0,0,0.55));
+    box-shadow: 0 6px 30px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+/* headings and centered layout */
+.panel{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 1rem;
+}
+
+/* big title at the top, centered */
+.panel .title{
+  font-size: clamp(2rem, 8vw, 4rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0.2rem 0 0.6rem;
+  color: #ffbaba;
+  text-align: center;
+  display: block;
+}
+
+/* remove bullets */
+.contents, .contents ul, .contents li {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-.AboutG {
-  text-decoration: none;
+/* center main contents below the title */
+.contents{
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  padding: 0 1rem;
 }
-.AboutU{
-  text-decoration: none;
+header h1, header h2, body h2 {
+    color: #ffd9d9;
+    text-shadow: 0 0 12px rgba(200,30,30,0.6), 0 2px 0 #000;
+    line-height: 1.15;
+    margin: 0 0 .6rem 0;
+    transition: text-shadow .25s ease;
 }
-.AboutJ{
-  text-decoration: none;
+
+/* eerie red title */
+header h1 {
+    font-size: clamp(1.1rem, 2.6vw, 2rem);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffbaba;
+    animation: flicker 4s infinite;
 }
+
+/* smaller descriptive text */
+header h2, body h2 {
+    font-size: clamp(.9rem, 1.9vw, 1.1rem);
+    color: #e7d7c9;
+    opacity: .95;
+}
+
+/* flicker effect */
+@keyframes flicker{
+    0%, 19%, 21%, 23%, 100% { text-shadow: 0 0 18px rgba(255,80,80,0.7); opacity:1; }
+    20% { text-shadow: none; opacity:.7; }
+    22% { text-shadow: 0 0 6px rgba(255,30,30,0.4); opacity:.85; }
+}
+
+/* interactive elements */
+a, button {
+    color: #ffd3d3;
+    background: rgba(0, 0, 0, 0.628);
+    border: 1px dashed rgba(255,80,80,0.45);
+    padding: .45rem .9rem;
+    text-decoration: none;
+    cursor: crosshair;
+    display: inline-block;
+    transition: transform .12s ease, box-shadow .12s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* hover pulse */
+a:hover, button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(150,10,10,0.5);
+    border-color: rgba(255,120,120,0.8);
+}
+
+/* clickable objects style (for game entities) */
+.object {
+    border: 2px solid rgba(120,10,10,0.35);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.45));
+    padding: .6rem;
+    margin: .4rem 0;
+    cursor: crosshair;
+    transition: transform .15s ease;
+}
+.object:active { transform: scale(.98); }
+
+/* footer */
+footer {
+    color: #b9a99a;
+    text-align: center;
+    padding: .8rem 0;
+    opacity: .7;
+    font-size: .85rem;
+}
+
+       

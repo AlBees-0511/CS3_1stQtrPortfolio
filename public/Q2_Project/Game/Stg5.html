@@ -8,22 +8,22 @@
         <div class="container">
 
   <div class="lever-box">
-    <img id="lever1" src="lever_closed.jpg" width="100">
+    <img id="lever1" src="lever_closed.webp" width="100">
     <br>
     <button class="wow" onclick="toggleLever('lever1', 1)">Toggle</button>
   </div>
   <div class="lever-box">
-    <img id="lever2" src="lever_closed.jpg" width="100">
+    <img id="lever2" src="lever_closed.webp" width="100">
     <br>
     <button class="wow" onclick="toggleLever('lever2', 2)">Toggle</button>
   </div>
   <div class="lever-box">
-    <img id="lever3" src="lever_closed.jpg" width="100">
+    <img id="lever3" src="lever_closed.webp" width="100">
     <br>
     <button class="wow" onclick="toggleLever('lever3', 3)">Toggle</button>
   </div>
   <div class="lever-box">
-    <img id="lever4" src="lever_closed.jpg" width="100">
+    <img id="lever4" src="lever_closed.webp" width="100">
     <br>
     <button class="wow" onclick="toggleLever('lever4', 4)">Toggle</button>
   </div>
@@ -31,6 +31,18 @@
        <button class="hay" type="button" onclick="Getout()">Go Back?</button>
        <br>
        <button class="hay" type="button" onclick="GoHome()">Go back to Main Menu?</button>
+       <div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <p id="popupText"></p>
+    <button class="hay" onclick="closePopup()">Continue</button>
+  </div>
+</div>
+<div id="notePopup" class="popup hidden">
+  <div class="note-box">
+    <p id="noteText"></p>
+    <button class="hay" onclick="closeNote()">Take Note</button>
+  </div>
+</div>
     </body>
     <footer>
 
@@ -41,25 +53,55 @@
         function toggleLever(leverId, leverNumber) {
             const lever = document.getElementById(leverId);
 
-            if (lever.src.includes("lever_closed.jpg")) {
-                lever.src = "lever_open.jpg";
+            if (lever.src.includes("lever_closed.webp")) {
+                lever.src = "lever_open.webp";
                 window["lev" + leverNumber] = true;
             } else {
-                lever.src = "lever_closed.jpg";
+                lever.src = "lever_closed.webp";
                 window["lev" + leverNumber] = false;
             }
         }
-    function check() {
-            if (
-                lev1 === true &&
-                lev3 === true &&
-                lev2 === false &&
-                lev4 === false
-            ) {
-                alert("A waLl suddenLy oPens, reveAling a doorway in THe wallS.");
-                alert("a note drops from above the wall, it reads 'The Captains of the Alpha, Bets its life for you.'")
-                window.location.href = "Stg6.html";
-            }
+    function showPopup(text, callback) {
+  document.getElementById("popupText").innerText = text;
+  document.getElementById("popup").classList.remove("hidden");
+  window.popupCallback = callback;
+}
+
+function closePopup() {
+  document.getElementById("popup").classList.add("hidden");
+  if (window.popupCallback) {
+    window.popupCallback();
+    window.popupCallback = null;
+  }
+}
+
+function check() {
+  if (lev1 === true && lev3 === true && lev2 === false && lev4 === false) {
+    showPopup(
+      "A waLl suddenLy oPens, reveAling a doorway in THe wallS.",
+      () => {
+        showNote(
+          "A note drops from above the wall, it reads 'The Captains of the Alpha, Bets its life for you.'",
+          () => {
+            window.location.href = "Stg6.html";
+          }
+        );
+      }
+    );
+  }
+}
+function showNote(text, callback) {
+  document.getElementById("noteText").innerText = text;
+  document.getElementById("notePopup").classList.remove("hidden");
+  window.noteCallback = callback;
+}
+
+function closeNote() {
+  document.getElementById("notePopup").classList.add("hidden");
+  if (window.noteCallback) {
+    window.noteCallback();
+    window.noteCallback = null;
+  }
 }
         function Getout()
         {

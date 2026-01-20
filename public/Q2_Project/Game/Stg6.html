@@ -2,16 +2,20 @@
     <html>
     <header>
         <link rel="stylesheet" href="Dungeon2.css">
+        <h1>.. -. .--. ..- - / -.. --- - ... / .- -. -.. / -.. .- ... .... . ... --..-- / - --- / . -. - . .-. / - .... .. ... / .-. --- --- -- .-.-.- / - .... . / -.-. .. .--. .... . .-. / -.-- --- ..- / .-- .. .-.. .-.. / -. . . -.. --..-- / .. ... / -... .- .-. / --. ..- . .-. .-. / --. ..- . .-. .-. / ..-. .-. .. .-. .- </h1>
     </header>
     <body>
-        <p id="bottomMessage">Player: What is it that's hiding to have such puzzles..??</p>
-
-        <h3>.. -. .--. ..- - / -.. --- - ... / .- -. -.. / -.. .- ... .... . ... --..-- / - --- / . -. - . .-. / - .... .. ... / .-. --- --- -- .-.-.- / - .... . / -.-. .. .--. .... . .-. / -.-- --- ..- / .-- .. .-.. .-.. / -. . . -.. --..-- / .. ... / -... .- .-. / --. ..- . .-. .-. / --. ..- . .-. .-. / ..-. .-. .. .-. .- </h3>
-    <div class="container">
+     <div id="dialogueBox" class="dialogue hidden">
+  <p id="dialogueText"></p>
+</div>
         <button class="pluh" onclick="Dot()">DOT</button> &nbsp; 
         <button class="plu" onclick="Dash()">DASH</button><br><br>
         <button class="fah" onclick="test()">Submit</button>
     </div>
+    <div id="resultPopup" class="dialogue hidden">
+  <p id="resultText"></p>
+  <button onclick="closeResult()">Continue</button>
+</div>
     </body>
     <footer>
 
@@ -27,18 +31,12 @@
         {
             window.location.href = "Stg5.html"
         }
-        document.addEventListener("DOMContentLoaded", function () {
-            const message = document.getElementById("bottomMessage");
+document.addEventListener("DOMContentLoaded", function () {
+  showDialogue("Player: What is it that's hiding to have such puzzles..??", () => {
+    showDialogue("You hear a rhythmic rumbling behind a wall.", null, 3000);
+  });
+});
 
-            // Fade in
-            message.classList.add("showing");
-
-            // Fade out after 2.5 seconds
-            setTimeout(() => {
-                message.classList.remove("showing");
-                message.classList.add("hiding");
-            }, 2500);
-        });
 
         function Dot()
         {
@@ -50,16 +48,57 @@
             var Dash = 0
             Dash += 1;
         }
-        function test()
-        {
-            if (Dot == 17 && Dash == 7)
-            {
-                alert("Congratulations, you have deciphered the code.");
-                how();
-            }
-            else
-            {
-                alert("Nothing happens, maybe try again?")
-            }
-        }
+function test() {
+  if (Dot == 17 && Dash == 7) {
+    showResult(
+      "The wall trembles and slowly opens.",
+      "success",
+      () => how()
+    );
+  } else {
+    showResult(
+      "The pattern grows softer. You only have a limited number of attempts.",
+    );
+  }
+}
+
+        function showDialogue(text, callback = null, duration = 2500) {
+  const box = document.getElementById("dialogueBox");
+  const textEl = document.getElementById("dialogueText");
+
+  textEl.innerText = text;
+  box.classList.remove("hidden");
+  box.classList.add("show");
+
+  setTimeout(() => {
+    box.classList.remove("show");
+    box.classList.add("hidden");
+
+    if (callback) {
+      setTimeout(callback, 600);
+    }
+  }, duration);
+}
+function showResult(text, type, callback = null) {
+  const box = document.getElementById("resultPopup");
+  const textEl = document.getElementById("resultText");
+
+  box.classList.remove("hidden", "success", "fail");
+  box.classList.add("show", type);
+  textEl.innerText = text;
+
+  window.resultCallback = callback;
+}
+
+function closeResult() {
+  const box = document.getElementById("resultPopup");
+  box.classList.remove("show");
+  box.classList.add("hidden");
+
+  if (window.resultCallback) {
+    window.resultCallback();
+    window.resultCallback = null;
+  }
+}
+
     </script>

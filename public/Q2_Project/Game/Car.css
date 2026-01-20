@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 body {
-  background-image: url("https://img.itch.zone/aW1nLzIwNzEzNzQwLnBuZw==/original/3nGeOk.png");
+  background-image: url("https://images.pexels.com/photos/31662008/pexels-photo-31662008/free-photo-of-rusty-abandoned-car-in-a-dark-forest.jpeg");
   background-size: cover;        /* Fill the screen */
   background-repeat: no-repeat;  /* No tiling */
   background-position: center;   /* Center the image */
@@ -153,4 +153,49 @@ footer {
     font-size: .85rem;
 }
 
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show modal when aria-hidden="false" */
+.modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal box */
+.modal-content {
+  width: 420px;
+  height: 300px;
+
+  max-width: 90vw;
+  max-height: 90vh;
+
+  padding: 25px;
+  border-radius: 12px;
+  overflow: auto;
+}
+
+/* Animate content when modal opens */
+.modal[aria-hidden="false"] .modal-content {
+  transform: scale(1);
+}
+#noteTitle {
+      color: black;
+      text-shadow: none;
+}
        
