@@ -1,15 +1,53 @@
 <!DOCTYPE html>
     <html>
     <header>
+        <link rel="stylesheet" href="Car.css">
         <h1>You found a broken down Car, you investigate further which led you to finding a peice of paper</h1>
     </header>
     <body>
-       <button type="button" onclick="HOUSE()">Go to house instead?</button> &nbsp; <button type="button" onclick="Cower()">Go back to pathway?</button>
-       &nbsp; <button type="button" onclick="Show()">Look at the note</button>
+       <button type="button" onclick="HOUSE()">Go to house instead?</button> &nbsp; <button id="middle" type="button" onclick="Cower()">Go back to pathway?</button>
+       &nbsp; <button id="right" type="button" onclick="Show()">Look at the note</button>
     </body>
     <footer>
 
     </footer>
+    <div id="noteModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-x" onclick="closeNote()">&times;</span>
+            <h2 id="noteTitle">Invisible Writing:</h2>
+            <p>Activate all levers first, then deactivate the 2nd and 4th levers.</p>
+        </div>
+    </div>
+
+    <script>
+        function Show(){
+            const modal = document.getElementById('noteModal');
+            modal.setAttribute('aria-hidden','false');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeNote(){
+            const modal = document.getElementById('noteModal');
+            modal.setAttribute('aria-hidden','true');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('click', e => {
+            const modal = document.getElementById('noteModal');
+            const content = modal.querySelector('.modal-content');
+            if (content) {
+                const closeBtn = content.querySelector('.close-x');
+                if (closeBtn) closeBtn.remove();
+                content.style.backgroundImage = "url('https://img.freepik.com/free-photo/close-up-detailed-wrinkled-paper-texture_23-2151873028.jpg?semt=ais_hybrid&w=740&q=80')";
+                content.style.backgroundSize = 'cover';
+                content.style.backgroundRepeat = 'no-repeat';
+                content.style.backgroundPosition = 'center';
+                content.style.backgroundColor = 'transparent';
+            }
+            if (modal.getAttribute('aria-hidden') === 'false' && e.target === modal) closeNote();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeNote();
+        });
+    </script>
     </html>
 
     <script>
@@ -20,9 +58,5 @@
         function Cower()
         {
             window.location.href = "Stg2.html"
-        }
-        function Show()
-        {
-            alert("Activate all levers first, then deactivate the 2nd and 4th levers.")
         }
     </script>

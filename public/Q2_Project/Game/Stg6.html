@@ -2,17 +2,21 @@
     <html>
     <header>
         <link rel="stylesheet" href="Dungeon2.css">
+        <h1>.. -. .--. ..- - / -.. --- - ... / .- -. -.. / -.. .- ... .... . ... --..-- / - --- / . -. - . .-. / - .... .. ... / .-. --- --- -- .-.-.- / - .... . / -.-. .. .--. .... . .-. / -.-- --- ..- / .-- .. .-.. .-.. / -. . . -.. --..-- / .. ... / -... .- .-. / --. ..- . .-. .-. / --. ..- . .-. .-. / ..-. .-. .. .-. .- </h1>
     </header>
     <body>
         <p id="bottomMessage">Player: What is it that's hiding to have such puzzles..??</p>
 
-        <h3>-... --.. .-.. ... .-.. --.. --.. / -- ...- -.-- / .-- -... .- .- .--. ..- -. / .- --- .--. --.. / .--. ..- / .- --- .-.. / .--- .--. .-- --- .-.. -.-- --..-- / ..-. ...- -... / .--- .... ..- / --.- -... --.. .- / .-- -... .- / .- --- .-.. / .--- ...- -.- .-.. / ..- ...- -.-- - .... ... ... ..-. / .... --.. ---... / --.. -.-- .... ..- .--</h3>
-
+        <h3>.. -. .--. ..- - / -.. --- - ... / .- -. -.. / -.. .- ... .... . ... --..-- / - --- / . -. - . .-. / - .... .. ... / .-. --- --- -- .-.-.- / - .... . / -.-. .. .--. .... . .-. / -.-- --- ..- / .-- .. .-.. .-.. / -. . . -.. --..-- / .. ... / -... .- .-. / --. ..- . .-. .-. / --. ..- . .-. .-. / ..-. .-. .. .-. .- </h3>
     <div class="container">
         <button class="pluh" onclick="Dot()">DOT</button> &nbsp; 
         <button class="plu" onclick="Dash()">DASH</button><br><br>
         <button class="fah" onclick="test()">Submit</button>
     </div>
+    <div id="resultPopup" class="dialogue hidden">
+  <p id="resultText"></p>
+  <button onclick="closeResult()">Continue</button>
+</div>
     </body>
     <footer>
 
@@ -30,18 +34,12 @@
         {
             window.location.href = "Stg5.html"
         }
-        document.addEventListener("DOMContentLoaded", function () {
-            const message = document.getElementById("bottomMessage");
+document.addEventListener("DOMContentLoaded", function () {
+  showDialogue("Player: What is it that's hiding to have such puzzles..??", () => {
+    showDialogue("You hear a rhythmic rumbling behind a wall.", null, 3000);
+  });
+});
 
-            // Fade in
-            message.classList.add("showing");
-
-            // Fade out after 2.5 seconds
-            setTimeout(() => {
-                message.classList.remove("showing");
-                message.classList.add("hiding");
-            }, 2500);
-        });
 
         function Dot()
         {
@@ -55,17 +53,14 @@
         }
         function test()
         {
-            if (final === "--..-.--......-.--")
+            if (Dot == 17 && Dash == 7)
             {
-            alert("One Last Chance to turn around.");
-            alert(final)
-            final = '';
-            how();
+                alert("Congratulations, you have deciphered the code.");
+                how();
             }
-            else if (final !== "--..-.--......-.--")
+            else
             {
-            alert("Nothing happens, maybe try again?")
-            final = '';
+                alert("Nothing happens, maybe try again?")
             }
         }
     </script>
