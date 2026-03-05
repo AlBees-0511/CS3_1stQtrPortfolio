@@ -11,18 +11,29 @@ function showAlert() {
         return false;
     } else {
         alert('Form submitted successfully!');
-        const Nfo = [
-            {
+
+        // Retrieve existing data from localStorage
+        let existingData = JSON.parse(localStorage.getItem('info')) || [];
+
+        // Create a new entry
+        const newEntry = {
+            "CL": document.getElementById('club').value,
             "ID": document.getElementById('fname').value,
             "FL": document.getElementById('lname').value,
+            "GL": document.getElementById('Grade').value,
             "EM": document.getElementById('email').value,
             "MN": document.getElementById('MobNum').value,
-            "GL": document.getElementById('Grade').value,
-            "CL": document.getElementById('club').value,
-            }
-        ]
-        localStorage.setItem('info', JSON.stringify(Nfo));
-        addRow(Nfo)
+        };
+
+        // Append the new entry to the existing data
+        existingData.push(newEntry);
+
+        // Save the updated data back to localStorage
+        localStorage.setItem('info', JSON.stringify(existingData));
+
+        // Call addRow to update the table
+        addRow();
+
         return true;
     }
 }
@@ -46,6 +57,11 @@ function addRow() {
     }
 
     const table = document.getElementById("myTable");
+    if (!table) {
+        console.error("Table with id 'myTable' not found in the DOM.");
+        return;
+    }
+
     const columns = ["ID", "FL", "EM", "MN", "GL", "CL"];
 
     // Loop through each element in the data array
@@ -58,4 +74,9 @@ function addRow() {
             newCell.textContent = element[column] ?? ""; // Use the column key to get the value
         });
     });
+
+
 }
+
+// Ensure the function runs after the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", addRow);
