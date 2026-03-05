@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend> Add a Movie </legend>
+            <label for="title">Movie Title:</label><br>
+            <input type="text" id="title" name="title" required="true" placeholder="Ex: How to train your dragon"><br><br>
+
+            <label> Year: </label><br>
+            <input type="number" id="year" name="year" required="true" placeholder="Ex: 2010"><br><br>
+
+            <label> Genre: </label><br>
+            <select required="true">
+                <option selected disabled>Select</option>
+                <option value="Act">Action</option>
+                <option value="Rom">Romance</option>
+                <option value="Hor">Horror</option>
+                <option value="Sci">Sci-Fi</option>
+                <option value="Com">Comedy</option>
+            </select>
+            <div class="star-rating" id="starRating">
+                <span class="star" data-value="5">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="1">&#9733;</span>
+            </div>
+    </form>
+</body>
+</html>

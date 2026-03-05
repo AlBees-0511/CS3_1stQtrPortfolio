@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add N Rows from Objects</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Dynamic Table from Object Data</h2>
+
+<table id="myTable">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Phone</th>
+    <th>Occupation</th>
+    <th>Status</th>
+  </tr>
+</table>
+
+<br>
+<button onclick="addRows()">Add Rows</button>
+
+<script>
+function addRows() {
+  const table = document.getElementById("myTable");
+
+  // Example dataset: Each object = 1 row
+  const data = [
+    {
+      name: "Alice Johnson",
+      age: 25,
+      email: "alice@example.com",
+      city: "New York",
+      country: "USA",
+      phone: "555-1234",
+      occupation: "Engineer",
+      status: "Active"
+    },
+    {
+      name: "Bob Smith",
+      age: 30,
+      email: "bob@example.com",
+      city: "London",
+      country: "UK",
+      phone: "555-5678",
+      occupation: "Designer",
+      status: "Inactive"
+    },
+    {
+      name: "Charlie Brown",
+      age: 28,
+      email: "charlie@example.com",
+      city: "Sydney",
+      country: "Australia",
+      phone: "555-8765",
+      occupation: "Teacher",
+      status: "Active"
+    }
+  ];
+
+  // Define the order of columns based on object keys
+  const columns = ["name", "age", "email", "city", "country", "phone", "occupation", "status"];
+
+  // Loop through each object (row)
+  data.forEach(item => {
+    const newRow = table.insertRow(-1); // Append at end
+
+    // Loop through each column key
+    columns.forEach(col => {
+      const cell = newRow.insertCell(-1);
+      cell.textContent = item[col] ?? ""; // Use empty string if property is missing
+    });
+  });
+}
+</script>
+
+</body>
+</html>

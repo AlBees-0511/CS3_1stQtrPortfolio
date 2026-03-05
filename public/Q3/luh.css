@@ -1,0 +1,18 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table {
+    width: 100%;
+}
+td {
+    margin: 10px;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) { background-color: #4f3ee4; color: white }
+tbody tr:nth-child(even)  { background-color: #ffffff; }
