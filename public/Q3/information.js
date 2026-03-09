@@ -74,9 +74,46 @@ function addRow() {
             newCell.textContent = element[column] ?? ""; // Use the column key to get the value
         });
     });
-
+    add()
 
 }
 
 // Ensure the function runs after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", addRow);
+
+function chooseClub() {
+    const clu = document.getElementById("clubs").value; // Get the selected club
+    const infor = JSON.parse(localStorage.getItem("info")) || []; // Retrieve data from localStorage
+    const table = document.getElementById("myTable");
+    const counter = document.getElementById("number")
+    let filteredData
+    if(clu === "All") {
+        filteredData = infor
+    } else {
+        filteredData = infor.filter(entry => entry.CL === clu)
+    }
+    counter.textContent = filteredData.length
+    // Clear the table except for the header row
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
+    
+    // If no data matches the selected club, display a message
+    if (filteredData.length === 0) {
+        const looki = table.insertRow(-1); // Add a new row
+        const woahi = looki.insertCell(-1); // Add a single cell
+        woahi.colSpan = 6; // Make the cell span all columns
+        woahi.textContent = "No Clubs Yet!"; // Set the message
+        return; // Exit the function
+    }
+    
+    // Populate the table with filtered data
+    filteredData.forEach(entry => {
+        const newRow = table.insertRow(-1); // Add a new row
+        const columns = ["ID", "FL", "EM", "MN", "GL", "CL"]; // Define the columns
+        columns.forEach(column => {
+            const newCell = newRow.insertCell(-1); // Add a new cell
+            newCell.textContent = entry[column] ?? ""; // Set the cell content
+        });
+    });
+}

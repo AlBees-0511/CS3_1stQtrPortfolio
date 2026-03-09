@@ -12,8 +12,9 @@
    <li><a href="Q3_2GStrontiumRamos.html">Back to the form</a></li>
     <br>
     <label for="Clubs">Select A Club</label>
-    <select name="clubs" id="clubs">
+    <select name="clubs" id="clubs" onchange="chooseClub()">
         <option selected disabled>-- select a club --</option>
+        <option value="All">All</option>
         <option value="SCA">SCA</option>
         <option value="Sapienara">Sapienara</option>
         <option value="Animo Chess Club">Animo Chess Club</option>
@@ -23,7 +24,7 @@
         <option value="Himig">Himig Agham</option>
     </select>
 
-    <p>TOTAL STUDENTS: </p><h1 id="number">0</h1>
+    <p>TOTAL SIGN UPS: </p><h1 id="number">0</h1>
 
     <table border="1" style="border-collapse: collapse;" id="myTable">
         <tr>
