@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.star-rating {
+    direction: rtl; /* Right-to-left for easy hover handling */
+    display: inline-flex;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.star {
+    color: lightgray;
+    transition: color 0.2s;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: gold;
+}
+
+.star.selected {
+    color: gold;
+    
+}
