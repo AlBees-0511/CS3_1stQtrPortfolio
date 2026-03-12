@@ -6,12 +6,12 @@
 <body>
     <form method="post">
         <fieldset>
-            <legend> Add a Movie </legend>
+            <h2>Add a Movie</h2>
             <label for="title">Movie Title:</label><br>
-            <input type="text" id="title" name="title" required="true" placeholder="How to train your dragon"><br><br>
+            <input type="text" id="title" name="title" required="true"><br><br>
 
             <label> Year: </label><br>
-            <input type="number" id="year" name="year" required="true" placeholder="Ex: 2010"><br><br>
+            <input type="number" id="year" name="year" required="true" min="0" max="10000"><br><br>
 
             <label> Genre: </label><br>
             <select required="true" id="code">
@@ -22,6 +22,8 @@
                 <option value="Sci">Sci-Fi</option>
                 <option value="Com">Comedy</option>
             </select>
+            <br>
+            <label> Rating: </label>
             <br>
             <div class="star-rating" id="starRating">
                 <span class="star" data-value="5">&#9733;</span>
