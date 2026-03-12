@@ -1,0 +1,58 @@
+.star-rating {
+    direction: rtl; /* Right-to-left for easy hover handling */
+    display: inline-flex;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.star {
+    color: lightgray;
+    transition: color 0.2s;
+}
+.star:hover,
+.star.hover ~ .star {
+    color: gold;
+}
+
+fieldset {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px 100px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label {
+    font-weight: bold;;
+}
+button {
+    padding: 10px 160px;
+    background-color: #0062ff;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-color: aliceblue;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.code {
+    padding: 10px 40px;
+    margin-left: 0px;
+    
+}
+
+.placeholder {
+    padding: 0%;;
+}
