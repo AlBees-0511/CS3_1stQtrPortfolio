@@ -1,15 +1,28 @@
-# Q3 Proposal Update
+# Q4 Proposal Update
 
-## Adventure at the Haunted Woods; Gone WRONG!!
+## Title:
+- Adventure Gone Wrong
 
-## Features:
+## Description
+
+- Have you ever wondered what happens in a forest that's next to an abandoned town? No? Why not? This project is about how a person who explores a forest to uncover some things the world is not prepared to know
+
+- The Project is for people who like a mix of horror and puzzle making!
+
+- You will love this project because of the secrets that the game hides and the puzzles that keeps you going "Huh?". The code can also target for those who like a bit of horror! Or even for those who like a bit of a challenge.
+
+# Features
+
 - PC and Mobile Compatible
-- Puzzles and Lore
-- Speedrun Mode!
+- Puzzles
+- Speedrun Mode
 
-## Details:
-- If you want to be on the leaderboard, you will be asked to input your name and section!
-- After that, we will use your name and your time to be put in speedrun mode!
+# Features does not include
+
+- Backpack system
+
+# Submitted by:
+- RAMOS, Jann Albee M. & PEREZ, Jose Angelo D. on March 18, 2026 to Sir Roy in partial fulfillment of the requirements in CS3 of DOST-PSHS-MC
 
 # CS3_1stQtrPortfolio_Aline Teresa Mendoza
 
@@ -39,3 +52,4 @@
 4. Press **Ctrl-Shift-G** to open source control. Type **"First Commit"** on the Message text box.
 5. Click on **Commit**, then on **Synch Changes** if it appears and a prompt will display **to fork**, click on it to enable saving on your github.com account.  
 6. Repeat numbers 4 to 6 whenever you make changes on this portfolio and saving it **(change commit message each time)**.
+
