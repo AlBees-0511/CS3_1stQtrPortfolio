@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="lola.css">
 </head>
 <body>
-    <form method="post">
+    <form>
         <fieldset>
             <h2>Add a Movie</h2>
             <label for="title">Movie Title:</label><br>
@@ -23,6 +23,7 @@
                 <option value="Com">Comedy</option>
             </select>
             <br>
+            <br>
             <label> Rating: </label>
             <br>
             <div class="star-rating" id="starRating">
@@ -34,7 +35,8 @@
             </div>
             <br>
             <br>
-            <button type="submit" value="hoo">Submit</button>
+            <button type="submit" value="hoo" onclick="outPut()" id="butt_on">Submit</button>
+            <div class="moviefav" id="movFav"></div>
     </form>
 </body>
 </html>
@@ -80,5 +82,27 @@
                 s.style.color = 'gold';
             }
         });
+    }
+    function outPut() {
+        let title = document.getElementById("title").value.trim();
+        let year = document.getElementById("year").value.trim();
+        let genre = document.getElementById("code").value;
+        let button = document.getElementById("butt_on");
+        let rating = selectedRating;
+
+        if (title === "" || year === "" || genre === "Select") {
+            button.textContent = "Nope.";
+            setTimeout(() => {
+                button.textContent = "Submit";
+            }, 2000);
+            return false;
+        } else {
+            button.textContent = "Submitted!";
+            setTimeout(() => {
+                button.textContent = "Submit";
+            }, 2000);
+            alert(`Title: ${title}, Year: ${year}, Genre: ${genre}, Rating: ${rating}`);
+            return false;
+        }
     }
 </script>

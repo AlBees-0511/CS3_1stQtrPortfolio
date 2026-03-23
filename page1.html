@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Speedrun Timer - Page 1</title>
+  <meta charset="UTF-8">
+  <title>Three.js Text Example</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
 </head>
 <body>
-    <h1>Page 1</h1>
-    <div id="timer" style="font-size:2em; font-family:monospace;">00:00.000</div>
-    <button onclick="startTimer()">Start</button>
-    <button onclick="stopTimer()">Stop</button>
-    <a href="page2.html">Go to Page 2</a>
+  <!-- Include Three.js and its dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/loaders/FontLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/geometries/TextGeometry.js"></script>
 
-    <script src="timer.js"></script>
+  <!-- Link to the app.js file -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
