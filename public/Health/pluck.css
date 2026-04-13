@@ -1,0 +1,15 @@
+table, tr, th, td {
+    border-style: dashed;
+    width: 50%;
+    margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    margin: center;
+}
