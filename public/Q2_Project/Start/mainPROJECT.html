@@ -1,20 +1,23 @@
 <!DOCTYPE html>
     <html>
+        <header>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </header>
         <head>
             <link rel="stylesheet" href="costume.css">
             <div class="panel">
             <div class="title">ADVENTURE GONE WRONG</div>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>
-    <div class="contents">
-        <h3 class="head3">Contents</h3>
-    <li><a href="AboutIT.html" class="AboutG">About the Game</a></li> <li><a href="HowJS.html" class="AboutJ">JS implementation</a></li>
-    <li><a href="AboutME.html" class="AboutU">About Ourselves</a></li> <li><a href="playarea1.html" class="play-btn">PLAY?</a></li>
-</div>
 
-    <button class="thing" onclick="startThingy()"> Speedrun Mode </button>
-    <button class="thing" onclick="stopThingy()"> Stop Speedrun </button>
-    <div id="timer" style="font-size:2em; font-family:monospace;">00:00.000</div>
+    <div id="woah" class="ah">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="mainPROJECT.html">Home</a>
+        <a href="Gameitout.html">Game 1</a>
+        <a href="#">Game 2</a>
+        <a href="#">About Us</a>
+        <a href="#">Leaderboard</a>
+    </div>
 
     <footer>
     </footer>
@@ -25,6 +28,13 @@
     {
         window.location.href = "playarea1.html"
     }
+    function openNav() {
+  document.getElementById("woah").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("woah").style.width = "0";
+}
 
 </script>
 <script src="start.js"></script>
