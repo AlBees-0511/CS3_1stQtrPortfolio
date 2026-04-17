@@ -3,101 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maze Game</title>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        canvas {
-            border: 2px solid black;
-            background-color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="costume.css">
 </head>
+<style>
+    p {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: large;
+    }
+    .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        grid-gap: 10px;
+    }
+
+    .keypad button {
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        background-color: #6c6c6c;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        text-align: center;
+    }
+
+    .keypad button:hover {
+        background-color: #4d4d4d;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+</style>
 <body>
-    <canvas id="maze" width="600" height="600"></canvas>
+    <div class="keypad">
+    <button onclick="numPad(this)">1</button> <button onclick="numPad(this)">2</button> <button onclick="numPad(this)">3</button>
+    <button onclick="numPad(this)">4</button> <button onclick="numPad(this)">5</button> <button onclick="numPad(this)">6</button>
+    <button onclick="numPad(this)">7</button> <button onclick="numPad(this)">8</button> <button onclick="numPad(this)">9</button>
+    <button onclick="rid()">X</button>        <button onclick="numPad(this)">0</button> <button onclick="leave()">Back</button>
+    </div>
     <script>
-        const canvas = document.getElementById('maze');
-        const ctx = canvas.getContext('2d');
-
-        const maze = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ];
-
-        const tileSize = 50;
-        const player = { x: 1, y: 1 };
-
-        function drawMaze() {
-            for (let row = 0; row < maze.length; row++) {
-                for (let col = 0; col < maze[row].length; col++) {
-                    ctx.fillStyle = maze[row][col] === 1 ? 'black' : 'white';
-                    ctx.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
-                }
-            }
-        }
-
-        function drawPlayer() {
-            ctx.fillStyle = 'red';
-            ctx.beginPath();
-            ctx.arc(
-                player.x * tileSize + tileSize / 2,
-                player.y * tileSize + tileSize / 2,
-                tileSize / 3,
-                0,
-                Math.PI * 2
-            );
-            ctx.fill();
-        }
-
-        function movePlayer(dx, dy) {
-            const newX = player.x + dx;
-            const newY = player.y + dy;
-
-            if (maze[newY][newX] === 0) {
-                player.x = newX;
-                player.y = newY;
+        let code = ""
+        function numPad(button) {
+            code += button.innerText
+            if (code == "041726") {
+                win();
             }
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawMaze();
-            drawPlayer();
         }
-
-        window.addEventListener('keydown', (e) => {
-            switch (e.key) {
-                case 'ArrowUp':
-                    movePlayer(0, -1);
-                    break;
-                case 'ArrowDown':
-                    movePlayer(0, 1);
-                    break;
-                case 'ArrowLeft':
-                    movePlayer(-1, 0);
-                    break;
-                case 'ArrowRight':
-                    movePlayer(1, 0);
-                    break;
-            }
-        });
-
-        drawMaze();
-        drawPlayer();
+        
+        function win() {
+            alert("You win!")
+        }
     </script>
 </body>
 </html>
